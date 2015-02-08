@@ -7,6 +7,7 @@ RSpec.describe ProductsController, type: :controller do
     {
       id: 1,
       article_number: 1,
+      description: 'product1',
       name: 'product1'
     }
   end
@@ -14,6 +15,7 @@ RSpec.describe ProductsController, type: :controller do
     {
       id: 2,
       article_number: 2,
+      description: 'product1',
       name: 'product2'
     }
   end

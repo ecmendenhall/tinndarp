@@ -1,15 +1,15 @@
-class LikesController < ApplicationController
+class NopesController < ApplicationController
 
   def index
     user_id = params[:user_id].to_i
-    likes = MemoryRepository.like.by_user(user_id)
-    render json: likes.map(&:attributes)
+    nopes = MemoryRepository.nope.by_user(user_id)
+    render json: nopes.map(&:attributes)
   end
 
   def create
     user_id = params[:user_id].to_i
     product_id = params[:product_id].to_i
-    like = MemoryRepository.like.create(
+    nope = MemoryRepository.nope.create(
       user_id: user_id,
       product_id: product_id
     )

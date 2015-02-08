@@ -27,14 +27,9 @@ RSpec.describe LikesController, type: :controller do
 
   describe '#create' do
     it 'creates a new like associated with the user' do
-      post :create, user_id: 1, product_id: 1
-      likes = repo.by_user(1)
-      expect(likes).not_to be_empty
-    end
-
-    it 'returns the new like associated with the user' do
       post :create, user_id: 1, product_id: 2
-      expect(JSON.parse response.body).to include({'user_id' => 1, 'product_id' => 2})
+      likes = repo.by_user(1)
+      expect(likes.length).to eq(2)
     end
   end
 end

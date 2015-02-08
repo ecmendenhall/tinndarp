@@ -4,29 +4,29 @@ if Rails.env.development?
   product_repo = MemoryRepository.product
   products = [
     {
-      id: 1,
       name: 'POÄNG',
-      article_number: 10116552
+      article_number: '10116552',
+      description: 'Chair'
     },
     {
-      id: 2,
       name: 'RÅSKOG',
-      article_number: 30216536
+      article_number: '30216536',
+      description: 'Utility cart'
     },
     {
-      id: 3,
       name: 'KARLSTAD',
-      article_number: 29875680
+      article_number: 'S29875680',
+      description: 'Sofa'
     },
     {
-      id: 4,
       name: 'LILLBRON',
-      article_number: 60253990
+      article_number: '60253990',
+      description: 'Coffee table',
     },
     {
-      id: 5,
       name: 'BILLY',
-      article_number: 60284784
+      article_number: '60284784',
+      description: 'Bookcase'
     }
   ]
   products.each {|p| product_repo.create(p) }
@@ -34,19 +34,15 @@ if Rails.env.development?
   user_repo = MemoryRepository.user
   users = [
     {
-      id: 1,
       email: 'alice@personal.pizza',
     },
     {
-      id: 2,
       email: 'bob@personal.pizza',
     },
     {
-      id: 3,
       email: 'eve@personal.pizza',
     },
     {
-      id: 4,
       email: 'mallory@personal.pizza',
     }
   ]
@@ -55,62 +51,30 @@ if Rails.env.development?
   like_repo = MemoryRepository.like
   likes = [
     {
-      id: 1,
-      user_id: 1,
-      product_id: 1
-    },
-    {
-      id: 2,
-      user_id: 1,
-      product_id: 2
-    },
-    {
-      id: 3,
-      user_id: 1,
-      product_id: 3
-    },
-    {
-      id: 4,
-      user_id: 1,
-      product_id: 4
-    },
-    {
-      id: 5,
-      user_id: 1,
-      product_id: 5
-    },
-    {
-      id: 6,
       user_id: 2,
       product_id: 2
     },
     {
-      id: 7,
       user_id: 2,
       product_id: 3
     },
     {
-      id: 8,
       user_id: 2,
       product_id: 4
     },
     {
-      id: 8,
       user_id: 3,
       product_id: 1
     },
     {
-      id: 9,
       user_id: 3,
       product_id: 3
     },
     {
-      id: 10,
       user_id: 3,
       product_id: 5
     },
     {
-      id: 11,
       user_id: 4,
       product_id: 5
     }

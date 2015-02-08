@@ -6,6 +6,9 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'sprockets-rails'
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-material-design'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'pry-nav'

@@ -13,5 +13,9 @@ module MemoryRepository
       product = model_class.new(attributes)
       save(product)
     end
+
+    def sample
+      all.sample
+    end
   end
 end

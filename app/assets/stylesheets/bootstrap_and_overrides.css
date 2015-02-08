@@ -1,0 +1,17 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  =require bootstrap-material-design
+*/
+
+.navbar-brand {
+  font-size: 300%;
+  font-weight: 600;
+}
+.ikea-yellow {
+  color: #ffdd00;
+}
+#nope-like-buttons { width: 40%; }

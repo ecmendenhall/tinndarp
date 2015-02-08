@@ -20,4 +20,10 @@ RSpec.describe MemoryRepository::ProductRepository do
     found = repo.find(product.id)
     expect(found).to eq(product)
   end
+
+  it 'samples products at random' do
+    product = repo.create(name: 'POÄNG', article_number: 10116552)
+    found = repo.sample
+    expect(found).to eq(product)
+  end
 end

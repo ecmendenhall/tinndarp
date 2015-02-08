@@ -4,8 +4,9 @@ require 'memory_repository/models/product'
 RSpec.describe MemoryRepository::Models::Product do
   let(:poang) do
     described_class.new(
-      name: 'POÄNG',
-      article_number: 10116552
+      article_number: 10116552,
+      description: 'Chair',
+      name: 'POÄNG'
     )
   end
 
@@ -15,6 +16,10 @@ RSpec.describe MemoryRepository::Models::Product do
 
   it 'has an article number' do
     expect(poang.article_number).to eq(10116552)
+  end
+
+  it 'has a description' do
+    expect(poang.description).to eq('Chair')
   end
 
   it 'has a catalog url' do
