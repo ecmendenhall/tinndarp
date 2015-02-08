@@ -69,12 +69,26 @@
         <h4>MATCHES</h4>
       </div>
       <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+          <%= @matched_user.email %><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <% @users.each do |u| %>
+              <li><a><%= u.email %></a></li>
+            <% end %>
+          </ul>
+          </li>
+        </ul>
+        </div>
       <table class="table table-striped">
         <tbody>
         <% @matched_products.each do |p| %>
           <tr>
             <td>
-            <%= link_to p.name, p.catalog_url%>
+              <span class="pull-left"><%= link_to p.name, p.catalog_url%></span>
+              <span class="pull-right"><%= p.description %></span>
             </td>
           </tr>
         <% end %>

@@ -16,6 +16,9 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#"><span class="ikea-yellow">TINNDÅRP</span></a>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a><%= @current_user.email if @current_user %></a></li>
+        </ul>
       </div>
     </nav>
 

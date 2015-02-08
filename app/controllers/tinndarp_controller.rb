@@ -21,6 +21,10 @@ class TinndarpController < ApplicationController
     @matched_products = matches.map do |id|
       product_repo.find(id)
     end
+
+    @current_user = MemoryRepository.user.find(1)
+    @matched_user = MemoryRepository.user.find(2)
+    @users = MemoryRepository.user.all
   end
 
 end
