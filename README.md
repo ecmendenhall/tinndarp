@@ -1,2 +1,2 @@
 # TINNDÅRP
-## Chair
+Chair
