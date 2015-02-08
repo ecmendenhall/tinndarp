@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: tinndarp_development
+  host: localhost
+
+test:
+  <<: *default
+  database: tinndarp_test
+  host: localhost
+
+production:
+  <<: *default
+  database: tinndarp_production
+  username: tinndarp
+  password: <%= ENV['TINNDARP_DATABASE_PASSWORD'] %>
