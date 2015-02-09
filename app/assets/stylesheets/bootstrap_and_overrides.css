@@ -14,4 +14,6 @@
 .ikea-yellow {
   color: #ffdd00;
 }
-#nope-like-buttons { width: 40%; }
+#nope-like-buttons { width: 50%; }
+#nope { font-size: 200% }
+#like { font-size: 200% }

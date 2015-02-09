@@ -37,7 +37,7 @@ if Rails.env.development?
       email: 'alice@personal.pizza',
     },
     {
-      email: 'bob@personal.pizza',
+      email: 'ecmendenhall@gmail.com',
     },
     {
       email: 'eve@personal.pizza',

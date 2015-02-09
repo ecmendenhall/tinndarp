@@ -73,5 +73,6 @@ RSpec.describe MemoryRepository::Base do
       repo.save(another_object)
       expect(repo.all).to eq([object, another_object])
     end
+
   end
 end

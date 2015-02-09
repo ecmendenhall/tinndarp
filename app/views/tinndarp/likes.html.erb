@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-lg-3">
+    <a href="/" class="btn btn-default btn-fab btn-raised pull-right mdi-navigation-arrow-back"><div class="ripple-wrapper"></div></a>
+  </div>
+  <div class="col-lg-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3>LIKES</h3>
+      </div>
+      <div class="panel-body">
+      <table class="table table-striped">
+        <tbody>
+        <% @liked_products.each do |p| %>
+          <tr>
+            <td>
+              <%= link_to p.name, p.catalog_url%>
+            </td>
+            <td>
+              <%= p.description %>
+            </td>
+            <td>
+              <%= p.article_number %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3"></div>
+</div>

@@ -2,7 +2,7 @@
   <div class="col-lg-3">
     <div class="panel">
       <div class="panel-heading">
-        <h4>LIKES</h4>
+        <h4><%= link_to 'LIKES', likes_path %></h4>
       </div>
       <div class="panel-body">
       <table class="table table-striped">
@@ -11,7 +11,7 @@
           <tr>
             <td>
               <%= link_to p.name, p.catalog_url %>
-              <a class="btn-flat btn-warning"><i class="mdi-navigation-close pull-right"></i></a>
+              <a class="btn-flat btn-success"><i class="mdi-action-favorite pull-right"></i></a>
             </td>
           </tr>
         <% end %>
@@ -21,7 +21,7 @@
     </div>
     <div class="panel">
       <div class="panel-heading">
-        <h4>NOPES</h4>
+        <h4><%= link_to 'NOPES', nopes_path %></h4>
       </div>
       <div class="panel-body">
       <table class="table table-striped">
@@ -30,7 +30,7 @@
           <tr>
             <td>
               <%= link_to p.name, p.catalog_url %>
-              <a class="btn-flat btn-success"><i class="mdi-navigation-check pull-right"></i></a>
+              <a class="btn-flat btn-warning"><i class="mdi-navigation-close pull-right"></i></a>
             </td>
           </tr>
         <% end %>
@@ -45,19 +45,20 @@
         <h3><%= @product.name %></h3>
       </div>
       <div class="panel-body">
-        <p class="text-muted"><%= @product.description %></p>
-        <%= image_tag "#{@product.name}.jpg" %>
+        <span class="pull-left text-muted"><%= @product.description %></span>
+        <span class="pull-right text-muted"><%= link_to "Item ##{@product.article_number}", @product.catalog_url %></span>
+        <%= image_tag "#{@product.name}.jpg", height: '480px', width: '480px' %>
         <div class="center-block" id="nope-like-buttons">
           <form class="pull-left" action="/users/1/nopes" method="post">
             <%= tag(:input, :type => 'hidden', :name => 'product_id', :value => @product.id) %>
             <%= tag(:input, :type => 'hidden', :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-            <input class="btn btn-warning" type="submit" value="NOPE">
+            <input class="btn btn-warning" id="nope" type="submit" value="NOPE">
           </form>
           <form class="pull-right" action="/users/1/likes" method="post">
             <%= tag(:input, :type => 'hidden', :name => 'product_id', :value => @product.id) %>
             <%= tag(:input, :type => 'hidden', :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
 
-            <input class="btn btn-success" type="submit" value="LIKE">
+            <input class="btn btn-success" id="like" type="submit" value="LIKE">
           </form>
         </div>
       </div>
@@ -66,13 +67,17 @@
   <div class="col-lg-3">
     <div class="panel">
       <div class="panel-heading">
-        <h4>MATCHES</h4>
+        <h4><%= link_to 'MATCHES', matches_path %></h4>
       </div>
       <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
           <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown">
-          <%= @matched_user.email %><span class="caret"></span>
+          <span>
+          <%= image_tag gravatar_for(@matched_user.email, 24), alt: 'icon' %>
+          <%= @matched_user.email %>
+          <span class="caret"></span>
+          </span>
           </a>
           <ul class="dropdown-menu">
             <% @users.each do |u| %>
